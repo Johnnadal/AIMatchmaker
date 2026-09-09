@@ -1,0 +1,12 @@
+$env:CLICKHOUSE_HOST="g8b1ue1o4l.europe-west4.gcp.clickhouse.cloud"
+$env:CLICKHOUSE_PORT="8443"
+$env:CLICKHOUSE_USER="default"
+$env:CLICKHOUSE_PASSWORD="JfK6ew9hFTO2."
+$env:CLICKHOUSE_SECURE="true"
+
+gcloud run deploy vid30-matchmaker-api `
+  --source . `
+  --region europe-west4 `
+  --platform managed `
+  --allow-unauthenticated `
+  --set-env-vars CLICKHOUSE_HOST=CLICKHOUSE_HOST,CLICKHOUSE_PORT="8443",CLICKHOUSE_USER="default",CLICKHOUSE_PASSWORD="CLICKHOUSE_PASSWORD",CLICKHOUSE_SECURE="true",GEMINI_API_KEY="$env:TA_CLE_API_GEMINI"
